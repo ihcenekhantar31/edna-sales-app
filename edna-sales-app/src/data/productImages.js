@@ -65,8 +65,8 @@ const map = {
   // Catalogue page 4
   'sea-001': P + 'scallops.jpg',
   'sea-002': P + 'tilapia-fillet.jpg',
-  'sea-003': P + 'tilapia-fillet-2.jpg',
-  'sea-004': P + 'basa-fillet.jpg',        // Pangasius steak
+  'sea-003': P + 'tilapia-fillet.jpg',     // same image, different pack size
+  'sea-004': P + 'sea4-row2-pos1.jpg',      // Pangasius steak (row 2 pos 1 on page 4)
   'sea-005': P + 'smoked-trout.jpg',
   'sea-006': P + 'smoked-salmon.jpg',
   'sea-007': P + 'salmon-fillet.jpg',
@@ -83,15 +83,15 @@ const map = {
   'sea-017': P + 'mussels.jpg',
   'sea-018': P + 'frog-legs-lg.jpg',
   'sea-019': P + 'frog-legs-md.jpg',
-  'sea-020': P + 'frog-legs-sm.jpg',
-  'sea-021': P + 'tuna.jpg',
+  'sea-020': P + 'sea-row3-pos1.jpg',       // Frog Legs 13/15 (row 3 pos 1 on page 5)
+  'sea-021': P + 'sea-row3-pos2.jpg',       // Tuna Loin (row 3 pos 2 on page 5)
   'sea-022': P + 'octopus.jpg',
   'sea-023': P + 'octopus.jpg',
-  'sea-024': P + 'calamari-crab-mix.jpg',  // baby octopus
-  'sea-025': P + 'calamari-crab-mix.jpg',  // baby calamari
-  'sea-026': P + 'crab.jpg',
-  'sea-027': P + 'crab.jpg',
-  'sea-028': P + 'seafood-mix-amora.jpg',  // cuttlefish
+  'sea-024': P + 'octopus.jpg',            // baby octopus
+  'sea-025': P + 'squid-rings.jpg',        // baby calamari = same family as squid
+  'sea-026': P + 'sea-row3-pos4.jpg',       // Cut Crab (row 3 pos 4 on page 5)
+  'sea-027': P + 'sea-row3-pos4.jpg',
+  'sea-028': P + 'calamari-crab-mix.jpg',  // cuttlefish
   'sea-029': P + 'seafood-mix-amora.jpg',
   'sea-030': P + 'seafood-mix-searay.jpg',
 
@@ -117,9 +117,9 @@ const map = {
   'veg-016': P + 'mixed-veg-3way.jpg',
   'veg-017': P + 'broad-beans.jpg',
   'veg-018': P + 'chopped-spinach.jpg',
-  'veg-019': P + 'corn.jpg',
-  'veg-020': P + 'red-chili.jpg',
-  'veg-021': P + 'green-peas-sh.jpg',
+  'veg-019': P + 'sh-corn.jpg',
+  'veg-020': P + 'sh-chili.jpg',
+  'veg-021': P + 'sh-greenpeas.jpg',
   // Magic Farms (catalogue page 9)
   'veg-022': P + 'broccoli-mf.jpg',
   'veg-023': P + 'mixed-veg-mf.jpg',
@@ -148,7 +148,7 @@ const map = {
   'pre-006': P + 'spring-rolls.jpg',
   'pre-007': P + 'spring-roll-pastry.jpg',
   'pre-008': P + 'spring-roll-pastry.jpg',
-  'pre-009': P + 'puff-pastry.jpg',
+  'pre-009': P + 'spring-roll-pastry.jpg',
   'pre-010': P + 'pierogies.jpg',
   'pre-011': P + 'pierogies.jpg',
   'pre-012': P + 'puff-pastry.jpg',

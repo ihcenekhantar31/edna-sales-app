@@ -64,13 +64,11 @@ export default function ProductDetail() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start mb-14">
           {/* Image */}
-          <div className="bg-gradient-to-br from-[#E8F5EE] to-[#d1e8d5] rounded-2xl h-72 md:h-80 overflow-hidden border border-gray-200">
+          <div className="bg-white rounded-2xl h-72 md:h-96 border border-gray-200 flex items-center justify-center p-6">
             {imgSrc ? (
-              <img src={imgSrc} alt={product.name} className="w-full h-full object-cover" />
+              <img src={imgSrc} alt={product.name} className="max-w-full max-h-full object-contain" />
             ) : (
-              <div className="w-full h-full flex items-center justify-center">
-                <ShoppingCart className="w-16 h-16 text-[#4CAF78]/30" />
-              </div>
+              <ShoppingCart className="w-16 h-16 text-[#4CAF78]/30" />
             )}
           </div>
 
