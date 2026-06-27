@@ -23,7 +23,7 @@ export default function Categories() {
             return (
               <div key={cat.id}>
                 <div className="flex items-center gap-4 mb-5 flex-wrap">
-                  <span className="text-4xl">{cat.icon}</span>
+                  <img src={cat.image} alt={cat.name} className="w-12 h-12 rounded-xl object-cover flex-shrink-0" />
                   <div className="flex-1">
                     <h2 className="text-xl font-bold text-gray-900">{cat.name}</h2>
                     <p className="text-gray-500 text-sm">{cat.description}</p>

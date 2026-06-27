@@ -10,7 +10,8 @@ import { getProductBySlug, getProductsByCategory } from '../data/products'
 import { getCategoryBySlug } from '../data/categories'
 import { useCart } from '../context/CartContext'
 import { useToast } from '../components/ui/Toast'
-import { getProductEmoji, formatPrice } from '../utils/helpers'
+import { formatPrice } from '../utils/helpers'
+import { getProductImage } from '../data/productImages'
 
 export default function ProductDetail() {
   const { slug } = useParams()
@@ -39,7 +40,7 @@ export default function ProductDetail() {
   const related = getProductsByCategory(product.category)
     .filter((p) => p.id !== product.id)
     .slice(0, 4)
-  const emoji = getProductEmoji(product.category, product.subcategory)
+  const imgSrc = getProductImage(product.id, product.category)
   const inCart = isInCart(product.id)
   const cartQty = getQty(product.id)
   const displayPrice = product.salePrice ?? product.price
@@ -63,15 +64,21 @@ export default function ProductDetail() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start mb-14">
           {/* Image */}
-          <div className="bg-gradient-to-br from-[#E8F5EE] to-[#d1e8d5] rounded-2xl h-72 md:h-80 flex items-center justify-center text-8xl border border-gray-200">
-            {emoji}
+          <div className="bg-gradient-to-br from-[#E8F5EE] to-[#d1e8d5] rounded-2xl h-72 md:h-80 overflow-hidden border border-gray-200">
+            {imgSrc ? (
+              <img src={imgSrc} alt={product.name} className="w-full h-full object-cover" />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                <ShoppingCart className="w-16 h-16 text-[#4CAF78]/30" />
+              </div>
+            )}
           </div>
 
           {/* Info */}
           <div>
             {/* Breadcrumb badges */}
             <div className="flex flex-wrap gap-2 mb-3">
-              {category && <Badge variant="default">{category.icon} {category.name}</Badge>}
+              {category && <Badge variant="default">{category.name}</Badge>}
               {product.subcategory && (
                 <Badge variant="gray">{product.subcategory.replace(/-/g, ' ')}</Badge>
               )}
