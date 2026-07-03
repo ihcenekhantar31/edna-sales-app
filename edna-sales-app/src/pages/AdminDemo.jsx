@@ -7,7 +7,7 @@ const STATS = [
   { label: 'Active Customers', value: '34', sub: '4 new this month' },
   { label: 'Avg Order Value', value: '$554', sub: '↑ up from $487' },
   { label: 'Pending Orders', value: '6', sub: 'Needs confirmation' },
-  { label: 'Top Category', value: '🦐 Shrimp', sub: '42% of sales' },
+  { label: 'Top Category', value: 'Shrimp', sub: '42% of sales' },
 ]
 
 const ORDERS = [
@@ -155,7 +155,7 @@ export default function AdminDemo() {
 
         {/* Future note */}
         <div className="bg-[#E8F5EE] border border-[#4CAF78]/40 rounded-xl p-4 text-sm text-[#1A3C2B]">
-          <strong>💡 Future connection:</strong> This dashboard is designed to connect to an EDNA Operations Dashboard
+          <strong>Future connection:</strong> This dashboard is designed to connect to an EDNA Operations Dashboard
           with invoice generation, QuickBooks export, supplier payments, customer payment tracking, and weekly business
           summaries.
         </div>

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(pip install pypdf pymupdf Pillow --quiet 2>&1)",
+      "PowerShell(python -c \"import fitz; print\\('pymupdf ok'\\); r=fitz.open\\(r'C:\\\\Users\\\\moham\\\\Downloads\\\\EDNA CATALOG with March Specials.pdf'\\); print\\(f'Pages: {len\\(r\\)}'\\); p=r[0]; print\\(p.get_text\\(\\)[:300]\\)\")"
+    ]
+  }
+}

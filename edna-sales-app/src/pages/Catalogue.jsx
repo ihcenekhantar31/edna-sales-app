@@ -89,7 +89,7 @@ export default function Catalogue() {
             return (
               <FilterChip
                 key={cat.id}
-                label={`${cat.icon} ${cat.name} (${count})`}
+                label={`${cat.name} (${count})`}
                 active={activeCategory === cat.slug}
                 onClick={() => handleCatChange(cat.slug)}
               />

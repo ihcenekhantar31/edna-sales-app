@@ -15,7 +15,7 @@ export default function HeroSection() {
 
       <div className="max-w-3xl mx-auto text-center relative">
         <div className="inline-flex items-center gap-2 bg-[#4CAF78]/20 border border-[#4CAF78]/30 text-[#4CAF78] text-xs font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider">
-          🌊 Premium Food Distribution
+          Premium Food Distribution
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-5 tracking-tight">

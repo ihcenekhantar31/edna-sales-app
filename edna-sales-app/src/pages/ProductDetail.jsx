@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { ArrowLeft, Check, ShoppingCart } from 'lucide-react'
+import { ArrowLeft, Check, ShoppingCart, ImageOff } from 'lucide-react'
 import PageWrapper from '../components/layout/PageWrapper'
 import ProductCard from '../components/ui/ProductCard'
 import QuantityControl from '../components/ui/QuantityControl'
@@ -11,7 +11,7 @@ import { getCategoryBySlug } from '../data/categories'
 import { useCart } from '../context/CartContext'
 import { useToast } from '../components/ui/Toast'
 import { formatPrice } from '../utils/helpers'
-import { getProductImage } from '../data/productImages'
+import { getProductImage } from '../data/productImageMap'
 
 export default function ProductDetail() {
   const { slug } = useParams()
@@ -40,7 +40,7 @@ export default function ProductDetail() {
   const related = getProductsByCategory(product.category)
     .filter((p) => p.id !== product.id)
     .slice(0, 4)
-  const imgSrc = getProductImage(product.id, product.category)
+  const { image: imgSrc, imageStatus } = getProductImage(product.id, product.category)
   const inCart = isInCart(product.id)
   const cartQty = getQty(product.id)
   const displayPrice = product.salePrice ?? product.price
@@ -63,12 +63,19 @@ export default function ProductDetail() {
         </button>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start mb-14">
-          {/* Image */}
-          <div className="bg-white rounded-2xl h-72 md:h-96 border border-gray-200 flex items-center justify-center p-6">
-            {imgSrc ? (
-              <img src={imgSrc} alt={product.name} className="max-w-full max-h-full object-contain" />
+          {/* Image — object-contain, no zoom, neutral background */}
+          <div className="bg-[#F5F5F5] rounded-2xl h-72 md:h-96 border border-gray-100 flex items-center justify-center p-6">
+            {imageStatus === 'missing' ? (
+              <div className="flex flex-col items-center gap-3 text-gray-300">
+                <ImageOff className="w-14 h-14" />
+                <span className="text-sm font-medium">Image coming soon</span>
+              </div>
             ) : (
-              <ShoppingCart className="w-16 h-16 text-[#4CAF78]/30" />
+              <img
+                src={imgSrc}
+                alt={product.name}
+                className="max-w-full max-h-full object-contain"
+              />
             )}
           </div>
 

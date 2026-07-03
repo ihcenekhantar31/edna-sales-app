@@ -5,7 +5,7 @@ export const categories = [
     name: 'Shrimp',
     nameFr: 'Crevettes',
     description: 'Cooked, raw, wild-caught and farmed shrimp in a wide range of sizes and cuts.',
-    icon: '🦐',
+    image: '/images/categories/shrimp.jpg',
     featured: true,
   },
   {
@@ -14,7 +14,7 @@ export const categories = [
     name: 'Fish & Seafood',
     nameFr: 'Poissons & Fruits de mer',
     description: 'Premium fish fillets, squid, octopus, clams, mussels and more.',
-    icon: '🐟',
+    image: '/images/categories/seafood.jpg',
     featured: true,
   },
   {
@@ -23,7 +23,7 @@ export const categories = [
     name: 'Frozen Vegetables',
     nameFr: 'Légumes congelés',
     description: 'A wide selection of IQF and block-frozen vegetables from trusted brands.',
-    icon: '🥦',
+    image: '/images/categories/frozen-vegetables.jpg',
     featured: true,
   },
   {
@@ -32,7 +32,7 @@ export const categories = [
     name: 'Prepared & Ready Foods',
     nameFr: 'Aliments préparés',
     description: 'Dumplings, gyoza, spring rolls, pierogies, burgers and pastry.',
-    icon: '🥟',
+    image: '/images/categories/prepared-foods.jpg',
     featured: true,
   },
   {
@@ -41,10 +41,11 @@ export const categories = [
     name: 'Confectionery & Snacks',
     nameFr: 'Confiseries & Collations',
     description: 'Gummy candies, Turkish delight, lollipops and salty sticks.',
-    icon: '🍬',
+    image: '/images/categories/confectionery.jpg',
     featured: true,
   },
 ]
 
 export const getCategoryBySlug = (slug) => categories.find((c) => c.slug === slug)
 export const getCategoryById = (id) => categories.find((c) => c.id === id)
+

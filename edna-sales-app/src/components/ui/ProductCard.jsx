@@ -1,14 +1,15 @@
 import { useNavigate } from 'react-router-dom'
-import { Plus, Check } from 'lucide-react'
+import { Plus, Check, Package, ImageOff } from 'lucide-react'
 import { useCart } from '../../context/CartContext'
-import { getProductEmoji, formatPrice } from '../../utils/helpers'
+import { formatPrice } from '../../utils/helpers'
+import { getProductImage } from '../../data/productImageMap'
 
 export default function ProductCard({ product }) {
   const { addToCart, isInCart } = useCart()
   const navigate = useNavigate()
   const inCart = isInCart(product.id)
-  const emoji = getProductEmoji(product.category, product.subcategory)
   const displayPrice = product.salePrice ?? product.price
+  const { image: imgSrc, imageStatus } = getProductImage(product.id, product.category)
 
   const handleAdd = (e) => {
     e.stopPropagation()
@@ -21,20 +22,31 @@ export default function ProductCard({ product }) {
       className="bg-white border border-gray-200 rounded-2xl overflow-hidden cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-[#4CAF78]/50 flex flex-col group"
     >
       {/* Image area */}
-      <div className="relative h-36 bg-gradient-to-br from-[#E8F5EE] to-[#d1e8d5] flex items-center justify-center text-5xl flex-shrink-0">
+      <div className="relative h-36 bg-[#F5F5F5] overflow-hidden flex-shrink-0">
         {product.featured && (
-          <span className="absolute top-2.5 left-2.5 bg-amber-400 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+          <span className="absolute top-2.5 left-2.5 z-10 bg-amber-400 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
             Featured
           </span>
         )}
         {product.salePrice && (
-          <span className="absolute top-2.5 right-2.5 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">
+          <span className="absolute top-2.5 right-2.5 z-10 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">
             Sale
           </span>
         )}
-        <span className="group-hover:scale-110 transition-transform duration-200 inline-block">
-          {emoji}
-        </span>
+
+        {imageStatus === 'missing' ? (
+          <div className="w-full h-full flex flex-col items-center justify-center gap-1 text-gray-300">
+            <ImageOff className="w-8 h-8" />
+            <span className="text-[10px]">Image coming soon</span>
+          </div>
+        ) : (
+          <img
+            src={imgSrc}
+            alt={product.name}
+            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+          />
+        )}
       </div>
 
       {/* Info */}
@@ -47,7 +59,10 @@ export default function ProductCard({ product }) {
         <div className="text-sm font-semibold text-gray-900 leading-snug mb-1.5 flex-1 line-clamp-2">
           {product.name}
         </div>
-        <div className="text-xs text-gray-400 mb-3">📦 {product.unit}</div>
+        <div className="text-xs text-gray-400 mb-3 flex items-center gap-1">
+          <Package className="w-3 h-3" />
+          {product.unit}
+        </div>
 
         <div className="flex items-center justify-between gap-2 mt-auto">
           <div>
