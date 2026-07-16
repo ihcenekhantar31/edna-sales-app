@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { Plus, Check, Package, ImageOff } from 'lucide-react'
+import { Plus, Check, Package, ImageOff, ChevronRight } from 'lucide-react'
 import { useCart } from '../../context/CartContext'
 import { formatPrice } from '../../utils/helpers'
 import { getProductImage } from '../../data/productImageMap'
@@ -8,12 +8,19 @@ export default function ProductCard({ product }) {
   const { addToCart, isInCart } = useCart()
   const navigate = useNavigate()
   const inCart = isInCart(product.id)
-  const displayPrice = product.salePrice ?? product.price
-  const { image: imgSrc, imageStatus } = getProductImage(product.id, product.category)
+
+  const defaultVariant = product.variants[0]
+  const hasMultipleVariants = product.variants.length > 1
+  const displayPrice = defaultVariant.salePrice ?? defaultVariant.price
+  const { image: imgSrc, imageStatus } = getProductImage(defaultVariant.id, product.category)
 
   const handleAdd = (e) => {
     e.stopPropagation()
-    addToCart(product, 1)
+    if (hasMultipleVariants) {
+      navigate(`/product/${product.slug}`)
+    } else {
+      addToCart(product, defaultVariant, 1)
+    }
   }
 
   return (
@@ -28,7 +35,12 @@ export default function ProductCard({ product }) {
             Featured
           </span>
         )}
-        {product.salePrice && (
+        {hasMultipleVariants && (
+          <span className="absolute top-2.5 right-2.5 z-10 bg-[#1A3C2B] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
+            {product.variants.length} sizes
+          </span>
+        )}
+        {defaultVariant.salePrice && (
           <span className="absolute top-2.5 right-2.5 z-10 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">
             Sale
           </span>
@@ -61,7 +73,9 @@ export default function ProductCard({ product }) {
         </div>
         <div className="text-xs text-gray-400 mb-3 flex items-center gap-1">
           <Package className="w-3 h-3" />
-          {product.unit}
+          {hasMultipleVariants
+            ? `${product.variants.length} sizes available`
+            : defaultVariant.packFormat}
         </div>
 
         <div className="flex items-center justify-between gap-2 mt-auto">
@@ -71,9 +85,9 @@ export default function ProductCard({ product }) {
                 <span className="text-sm font-bold text-[#1A3C2B]">
                   {formatPrice(displayPrice)}
                 </span>
-                {product.salePrice && product.price && (
+                {defaultVariant.salePrice && defaultVariant.price && (
                   <span className="text-xs text-gray-400 line-through">
-                    {formatPrice(product.price)}
+                    {formatPrice(defaultVariant.price)}
                   </span>
                 )}
               </div>
@@ -93,6 +107,11 @@ export default function ProductCard({ product }) {
               <>
                 <Check className="w-3 h-3" />
                 Added
+              </>
+            ) : hasMultipleVariants ? (
+              <>
+                Select
+                <ChevronRight className="w-3 h-3" />
               </>
             ) : (
               <>

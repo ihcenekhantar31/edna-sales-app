@@ -14,8 +14,9 @@ export function buildWhatsAppMessage(items, customer) {
   items.forEach((item, index) => {
     const price = item.salePrice ?? item.price
     msg += `${index + 1}. ${item.name}\n`
+    if (item.size) msg += `   Size: ${item.size}\n`
     msg += `   SKU: ${item.sku}\n`
-    msg += `   Pack: ${item.unit} × ${item.qty} case${item.qty > 1 ? 's' : ''}\n`
+    msg += `   Pack: ${item.packFormat} × ${item.qty} case${item.qty > 1 ? 's' : ''}\n`
     if (price) {
       msg += `   Line total: $${(price * item.qty).toFixed(2)} CAD\n`
     }

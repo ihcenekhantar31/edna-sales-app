@@ -71,12 +71,12 @@ export default function Cart() {
               const price = item.salePrice ?? item.price
               return (
                 <div
-                  key={item.productId}
+                  key={item.variantId}
                   className="bg-white border border-gray-200 rounded-xl p-4 flex gap-4 items-center"
                 >
                   <div
                     className="w-16 h-16 bg-[#E8F5EE] rounded-lg flex items-center justify-center text-3xl flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity"
-                    onClick={() => navigate(`/product/${item.productId}`)}
+                    onClick={() => navigate(`/product/${item.productSlug}`)}
                   >
                     {emoji}
                   </div>
@@ -84,11 +84,13 @@ export default function Cart() {
                     <div className="text-sm font-semibold text-gray-900 leading-snug mb-0.5 line-clamp-2">
                       {item.name}
                     </div>
-                    <div className="text-xs text-gray-400 mb-2">📦 {item.unit}</div>
+                    <div className="text-xs text-gray-400 mb-2">
+                      {item.size ? `${item.size} — ` : ''}📦 {item.packFormat}
+                    </div>
                     <div className="flex items-center gap-3 flex-wrap">
                       <QuantityControl
                         value={item.qty}
-                        onChange={(v) => updateQty(item.productId, v)}
+                        onChange={(v) => updateQty(item.variantId, v)}
                         size="sm"
                       />
                       {price ? (
@@ -99,7 +101,7 @@ export default function Cart() {
                         <span className="text-xs text-gray-400 italic">Price on request</span>
                       )}
                       <button
-                        onClick={() => removeFromCart(item.productId)}
+                        onClick={() => removeFromCart(item.variantId)}
                         className="text-xs text-gray-400 hover:text-red-500 underline ml-auto transition-colors"
                       >
                         Remove
@@ -128,7 +130,7 @@ export default function Cart() {
               {items.map((item) => {
                 const price = item.salePrice ?? item.price
                 return (
-                  <div key={item.productId} className="flex justify-between text-sm gap-2">
+                  <div key={item.variantId} className="flex justify-between text-sm gap-2">
                     <span className="text-gray-500 truncate flex-1">
                       {item.name.substring(0, 28)}{item.name.length > 28 ? '…' : ''} ×{item.qty}
                     </span>

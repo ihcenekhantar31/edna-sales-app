@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ArrowLeft, CheckCircle, AlertCircle, XCircle, Filter } from 'lucide-react'
-import { products as getAllProducts } from '../../data/products'
+import { products } from '../../data/products'
 import { productImageMap, getProductImage, getImageStats } from '../../data/productImageMap'
 
 const STATUS_CONFIG = {
@@ -15,17 +15,31 @@ export default function ImageAudit() {
   const [filterStatus, setFilterStatus] = useState('all')
   const [filterCategory, setFilterCategory] = useState('all')
 
-  const products = getAllProducts
   const stats = getImageStats()
+
+  // Flatten product groups into variant rows for the audit table
+  const allRows = []
+  for (const p of products) {
+    for (const v of p.variants) {
+      const { image, imageStatus, imageNote } = getProductImage(v.id, p.category)
+      allRows.push({
+        id: v.id,
+        name: p.name + (v.size ? ` — ${v.size}` : '') + (p.variants.length > 1 && !v.size ? ` (${v.packFormat})` : ''),
+        brand: p.brand,
+        category: p.category,
+        subcategory: p.subcategory,
+        sku: v.sku,
+        image,
+        imageStatus,
+        imageNote,
+      })
+    }
+  }
 
   const categories = [...new Set(products.map(p => p.category))].sort()
 
-  const rows = products.map(p => {
-    const { image, imageStatus, imageNote } = getProductImage(p.id, p.category)
-    return { ...p, image, imageStatus, imageNote }
-  })
 
-  const filtered = rows.filter(r => {
+  const filtered = allRows.filter(r => {
     if (filterStatus !== 'all' && r.imageStatus !== filterStatus) return false
     if (filterCategory !== 'all' && r.category !== filterCategory) return false
     return true

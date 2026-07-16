@@ -28,10 +28,11 @@ export const productImageMap = {
   // SHRIMP
   // ══════════════════════════════════════════════════════════════════════
 
-  // Cooked Broken Tail-Off — confirmed (catalogue p.1)
-  'shp-001': { image: P+'shrimp-cooked-broken.jpg',   imageStatus:'exact',    imageNote:'Catalogue p.1 — cooked broken tail-off 100/200' },
-  'shp-041': { image: null,                            imageStatus:'fallback', imageNote:'Triple Crown variant — no distinct catalogue image' },
-  'shp-053': { image: null,                            imageStatus:'fallback', imageNote:'Amora Mer tail-off — no distinct catalogue image' },
+  // Cooked Broken Tail-Off — confirmed (uploaded image)
+  'shp-001': { image: P+'shrimp-cooked-broken-100-200.png', imageStatus:'exact', imageNote:'Uploaded — cooked broken tail-off 100/200 2 lbs' },
+  'shp-002': { image: P+'shrimp-cooked-broken-100-200.png', imageStatus:'exact', imageNote:'Uploaded — cooked broken tail-off 100/200 10×1 lb' },
+  'shp-041': { image: P+'shrimp-cooked-200-300.png',        imageStatus:'exact', imageNote:'Uploaded — Triple Crown cooked tail-off 200/300' },
+  'shp-053': { image: P+'shrimp-cooked-tailoff-100-150.png',imageStatus:'exact', imageNote:'Uploaded — Amora Mer cooked tail-off 100/150' },
 
   // Cooked Tail-Off — confirmed (catalogue p.1)
   'shp-003': { image: P+'shrimp-cooked-tailoff.jpg',  imageStatus:'exact',    imageNote:'Catalogue p.1 — cooked tail-off 40/60' },
@@ -59,33 +60,30 @@ export const productImageMap = {
   'shp-015': { image: null,                            imageStatus:'fallback', imageNote:'Different size of shp-011 — no distinct image' },
   'shp-016': { image: null,                            imageStatus:'fallback', imageNote:'Different size of shp-011 — no distinct image' },
   'shp-017': { image: null,                            imageStatus:'fallback', imageNote:'Different size of shp-011 — no distinct image' },
-  'shp-028': { image: null,                            imageStatus:'fallback', imageNote:'Amora Mer raw easy peel — no distinct image' },
-  'shp-029': { image: null,                            imageStatus:'fallback', imageNote:'Amora Mer raw easy peel — no distinct image' },
 
-  // Raw White Vietnam — confirmed (catalogue p.2)
-  'shp-018': { image: P+'shrimp-raw-plate.jpg',       imageStatus:'exact',    imageNote:'Catalogue p.2 — Sea Ray Raw Vietnam 8/12' },
-  'shp-019': { image: null,                            imageStatus:'fallback', imageNote:'Different size of shp-018 — no distinct image' },
-  'shp-020': { image: null,                            imageStatus:'fallback', imageNote:'Raw peeled tail-off — no distinct image' },
+  // Raw White Vietnam — confirmed (uploaded image)
+  'shp-018': { image: P+'raw-shrimp-vietnam.png',       imageStatus:'exact', imageNote:'Uploaded — Sea Ray Raw Vietnam 8/12' },
+  'shp-019': { image: P+'raw-shrimp-vietnam.png',       imageStatus:'exact', imageNote:'Uploaded — Sea Ray Raw Vietnam 13/15 (shares Vietnam image)' },
+  'shp-020': { image: P+'shrimp-raw-peeled-tailoff.png',imageStatus:'exact', imageNote:'Uploaded — Raw peeled tail-off 41/50' },
 
-  // Black Tiger — NOT in this catalogue
-  'shp-021': { image: null,                            imageStatus:'missing',  imageNote:'Black Tiger not in EDNA catalogue — needs manual upload' },
-  'shp-022': { image: null,                            imageStatus:'missing',  imageNote:'Black Tiger not in EDNA catalogue — needs manual upload' },
-  'shp-023': { image: null,                            imageStatus:'missing',  imageNote:'Black Tiger not in EDNA catalogue — needs manual upload' },
+  // Black Tiger — confirmed (uploaded image)
+  'shp-021': { image: P+'black-tiger-ezpeel.png',       imageStatus:'exact', imageNote:'Uploaded — Black Tiger EZ Peel' },
+  'shp-022': { image: P+'black-tiger-ezpeel.png',       imageStatus:'exact', imageNote:'Uploaded — Black Tiger EZ Peel (shares image)' },
+  'shp-023': { image: P+'black-tiger-ezpeel.png',       imageStatus:'exact', imageNote:'Uploaded — Black Tiger EZ Peel (shares image)' },
 
-  // Argentina — NOT confirmed
-  'shp-024': { image: null,                            imageStatus:'missing',  imageNote:'Wild Argentina — needs catalogue upload' },
-  'shp-025': { image: null,                            imageStatus:'missing',  imageNote:'Wild Argentina — needs catalogue upload' },
+  // Argentina — no distinct image
+  'shp-024': { image: null, imageStatus:'fallback', imageNote:'Wild Argentina 13/15 — no distinct image' },
+  'shp-025': { image: null, imageStatus:'fallback', imageNote:'Wild Argentina 16/20 — no distinct image' },
 
-  // Cold Water — NOT confirmed
-  'shp-026': { image: null,                            imageStatus:'missing',  imageNote:'Denmark Cold Water — needs catalogue upload' },
+  // Butterfly — confirmed (uploaded images)
+  'shp-027': { image: P+'butterfly-argentina.png',      imageStatus:'exact', imageNote:'Uploaded — Wild Butterfly Argentina 11/15' },
+  'shp-028': { image: P+'shrimp-raw-easy-peel-31-40.png',imageStatus:'exact',imageNote:'Uploaded — Amora Mer Raw Easy Peel 31/40' },
+  'shp-029': { image: P+'shrimp-raw-easy-peel-31-40.png',imageStatus:'exact',imageNote:'Uploaded — Amora Mer Raw Easy Peel (shares image)' },
+  'shp-030': { image: P+'butterfly-shrimp-india.png',   imageStatus:'exact', imageNote:'Uploaded — Butterfly Shrimp India' },
+  'shp-031': { image: null, imageStatus:'fallback', imageNote:'Butterfly Vietnam — no distinct image' },
 
-  // Butterfly — NOT confirmed
-  'shp-027': { image: null,                            imageStatus:'missing',  imageNote:'Wild Butterfly Argentina — needs catalogue upload' },
-  'shp-030': { image: null,                            imageStatus:'missing',  imageNote:'Butterfly India — needs catalogue upload' },
-  'shp-031': { image: null,                            imageStatus:'fallback', imageNote:'Butterfly Vietnam — no distinct image' },
-
-  // Tempura — NOT in this catalogue
-  'shp-035': { image: null,                            imageStatus:'missing',  imageNote:'Tempura shrimp not in EDNA catalogue — needs manual upload' },
+  // Tempura — confirmed (uploaded image)
+  'shp-035': { image: P+'shrimp-tempura.png',           imageStatus:'exact', imageNote:'Uploaded — Shrimp Tempura' },
 
   // ══════════════════════════════════════════════════════════════════════
   // FISH & SEAFOOD
@@ -95,28 +93,28 @@ export const productImageMap = {
   'sea-001': { image: P+'tilapia-fillet.jpg',          imageStatus:'exact',    imageNote:'Catalogue p.4 r1 — Scallops confirmed by user (file mislabeled)' },
   'sea-029': { image: P+'seafood-mix-amora.jpg',       imageStatus:'exact',    imageNote:'Catalogue p.4 r1 — Amora Seafood Mix confirmed' },
 
-  // Tilapia — content analysis only, not user-confirmed → fallback
-  'sea-002': { image: null,                            imageStatus:'fallback', imageNote:'Tilapia — crop visual content unconfirmed' },
-  'sea-003': { image: null,                            imageStatus:'fallback', imageNote:'Tilapia 16×700g — shares unconfirmed crop' },
+  // Tilapia — confirmed (uploaded image)
+  'sea-002': { image: P+'tilapia-fillet-new.png',  imageStatus:'exact', imageNote:'Uploaded — Tilapia Fillet' },
+  'sea-003': { image: P+'tilapia-fillet-new.png',  imageStatus:'exact', imageNote:'Uploaded — Tilapia Fillet 16×700g (shares image)' },
 
-  // Sea Ray Seafood Mix — content analysis only → fallback
-  'sea-030': { image: null,                            imageStatus:'fallback', imageNote:'Sea Ray Seafood Mix — crop visual content unconfirmed' },
+  // Sea Ray Seafood Mix — confirmed (uploaded image)
+  'sea-030': { image: P+'seafood-mix-550g.png',    imageStatus:'exact', imageNote:'Uploaded — Sea Ray Seafood Mix 550g' },
 
-  // Page 4 rows 2–3 positional crops — never visually confirmed → MISSING
-  'sea-004': { image: null,                            imageStatus:'missing',  imageNote:'Pangasius — positional crop unconfirmed; needs visual check' },
-  'sea-005': { image: null,                            imageStatus:'missing',  imageNote:'Smoked Trout — positional crop unconfirmed; needs visual check' },
-  'sea-006': { image: null,                            imageStatus:'missing',  imageNote:'Smoked Salmon — positional crop unconfirmed; needs visual check' },
-  'sea-007': { image: null,                            imageStatus:'missing',  imageNote:'Salmon Fillet Chile — positional crop unconfirmed; needs visual check' },
-  'sea-008': { image: null,                            imageStatus:'missing',  imageNote:'Doré Fillets — positional crop unconfirmed; needs visual check' },
-  'sea-009': { image: null,                            imageStatus:'missing',  imageNote:'Tilapia Whole — positional crop unconfirmed; needs visual check' },
-  'sea-010': { image: null,                            imageStatus:'missing',  imageNote:'Sole Fillets — positional crop unconfirmed; needs visual check' },
-  'sea-011': { image: null,                            imageStatus:'missing',  imageNote:'Basa Fillet — positional crop unconfirmed; needs visual check' },
+  // Fish — confirmed (uploaded images)
+  'sea-004': { image: P+'basa-steak.png',          imageStatus:'exact', imageNote:'Uploaded — Basa/Pangasius Steak' },
+  'sea-005': { image: P+'steelhead-trout.png',     imageStatus:'exact', imageNote:'Uploaded — Steelhead Trout' },
+  'sea-006': { image: P+'smoked-atlantic-salmon.png',imageStatus:'exact',imageNote:'Uploaded — Gold Fish Smoked Atlantic Salmon' },
+  'sea-007': { image: P+'salmon-fillet-chile.png', imageStatus:'exact', imageNote:'Uploaded — Salmon Fillet Chile' },
+  'sea-008': { image: P+'dore-fillet-euro.png',    imageStatus:'exact', imageNote:'Uploaded — Doré Fillet Euro' },
+  'sea-009': { image: P+'sh-tilapia-whole.png',     imageStatus:'exact',   imageNote:'Uploaded — SH Tilapia Gutted & Scaled IQF' },
+  'sea-010': { image: P+'sole-fillet.png',         imageStatus:'exact', imageNote:'Uploaded — Fillets de Sole' },
+  'sea-011': { image: P+'basa-fillet.png',         imageStatus:'exact', imageNote:'Uploaded — Basa Fillet' },
 
   // Page 5 row 1 — squid (confirmed)
-  'sea-012': { image: P+'p5r1c1.jpg',                 imageStatus:'exact',    imageNote:'Catalogue p.5 r1c1 — Squid Rings 20×1lb' },
-  'sea-013': { image: P+'p5r1c2.jpg',                 imageStatus:'exact',    imageNote:'Catalogue p.5 r1c2 — Squid Rings 10×2lb' },
-  'sea-014': { image: P+'p5r1c3.jpg',                 imageStatus:'exact',    imageNote:'Catalogue p.5 r1c3 — Breaded Squid Rings 12×400g' },
-  'sea-015': { image: P+'p5r1c4.jpg',                 imageStatus:'exact',    imageNote:'Catalogue p.5 r1c4 — Breaded Squid Rings 10×2lb' },
+  'sea-012': { image: P+'p5r1c1.jpg',               imageStatus:'exact', imageNote:'Catalogue p.5 r1c1 — Squid Rings 20×1lb' },
+  'sea-013': { image: P+'p5r1c2.jpg',               imageStatus:'exact', imageNote:'Catalogue p.5 r1c2 — Squid Rings 10×2lb' },
+  'sea-014': { image: P+'breaded-squid-rings.png',  imageStatus:'exact', imageNote:'Uploaded — Breaded Squid Rings 12×400g' },
+  'sea-015': { image: P+'breaded-squid-rings.png',  imageStatus:'exact', imageNote:'Uploaded — Breaded Squid Rings 10×2lb (shares image)' },
 
   // Page 5 row 2 — confirmed
   'sea-016': { image: P+'p5r2c1.jpg',                 imageStatus:'exact',    imageNote:'Catalogue p.5 r2c1 — Cooked Whole Clams' },
@@ -126,29 +124,28 @@ export const productImageMap = {
   'sea-020': { image: null,                            imageStatus:'fallback', imageNote:'Frog Legs 13/15 — shares 6/8 image, no separate catalogue image' },
   'sea-021': { image: P+'p5r2c4.jpg',                 imageStatus:'exact',    imageNote:'Catalogue p.5 r2c4 — Tuna Loin confirmed by user' },
 
-  // Page 5 row 3 — positional crops, unconfirmed → MISSING
-  'sea-022': { image: null,                            imageStatus:'missing',  imageNote:'King Octopus T2 — positional crop unconfirmed' },
-  'sea-023': { image: null,                            imageStatus:'missing',  imageNote:'King Octopus T3 — positional crop unconfirmed' },
-  'sea-024': { image: null,                            imageStatus:'missing',  imageNote:'Baby Octopus — positional crop unconfirmed' },
-  'sea-025': { image: null,                            imageStatus:'missing',  imageNote:'Baby Calamari — no confirmed image' },
-  'sea-026': { image: null,                            imageStatus:'missing',  imageNote:'Cut Crab 3/5 — positional crop unconfirmed' },
-  'sea-027': { image: null,                            imageStatus:'missing',  imageNote:'Cut Crab 5/8 — positional crop unconfirmed' },
-  'sea-028': { image: null,                            imageStatus:'missing',  imageNote:'Baby Cuttlefish — positional crop unconfirmed' },
+  // Octopus/Calamari/Crab/Cuttlefish — confirmed (uploaded images)
+  // sea-022 and sea-023 (King Octopus Flower T2/T3) deleted from products
+  'sea-024': { image: P+'baby-octopus-cleaned.png', imageStatus:'exact', imageNote:'Uploaded — Baby Octopus Cleaned' },
+  'sea-025': { image: P+'calamari-tube.png',         imageStatus:'exact', imageNote:'Uploaded — Calamari Tube / Baby Calamari' },
+  'sea-026': { image: P+'frozen-crab.png',           imageStatus:'exact', imageNote:'Uploaded — Frozen Cut Crab 3/5' },
+  'sea-027': { image: P+'frozen-crab.png',           imageStatus:'exact', imageNote:'Uploaded — Frozen Cut Crab 5/8 (shares image)' },
+  'sea-028': { image: P+'cuttlefish.png',            imageStatus:'exact', imageNote:'Uploaded — Baby Cuttlefish' },
 
   // ══════════════════════════════════════════════════════════════════════
   // FROZEN VEGETABLES — all confirmed in rounds 1–2
   // ══════════════════════════════════════════════════════════════════════
 
-  // Hala (catalogue p.6)
-  'veg-001': { image: P+'mixed-vegetables.jpg',        imageStatus:'exact',    imageNote:'Catalogue p.6 — Hala Mixed Vegetables' },
-  'veg-002': { image: P+'okra.jpg',                    imageStatus:'exact',    imageNote:'Catalogue p.6 — Hala Okra Zero' },
-  'veg-003': { image: null,                            imageStatus:'fallback', imageNote:'Okra Excellent — no distinct image from Okra Zero' },
-  'veg-004': { image: P+'green-peas.jpg',              imageStatus:'exact',    imageNote:'Catalogue p.6 — Hala Frozen Peas' },
-  'veg-005': { image: P+'spinach.jpg',                 imageStatus:'exact',    imageNote:'Catalogue p.6 — Hala Spinach Minced' },
-  'veg-006': { image: P+'molokhia.jpg',                imageStatus:'exact',    imageNote:'Catalogue p.6 — Hala Molokhia Minced' },
-  'veg-007': { image: P+'artichoke.jpg',               imageStatus:'exact',    imageNote:'Catalogue p.6 — Hala Artichoke Bottoms' },
-  'veg-008': { image: P+'cauliflower.jpg',             imageStatus:'exact',    imageNote:'Catalogue p.6 — Hala Cauliflower' },
-  'veg-009': { image: P+'broccoli.jpg',                imageStatus:'exact',    imageNote:'Catalogue p.6 — Hala Broccoli' },
+  // Hala (catalogue p.6) — filenames were rotated; corrected by visual inspection
+  'veg-001': { image: P+'mixed-vegetables.jpg', imageStatus:'exact', imageNote:'Catalogue p.6 — Hala Mixed Vegetables' },
+  'veg-002': { image: P+'okra.jpg',             imageStatus:'exact', imageNote:'Catalogue p.6 — Hala Okra Zero (verified)' },
+  'veg-003': { image: null,                      imageStatus:'fallback', imageNote:'Okra Excellent — no distinct image from Okra Zero' },
+  'veg-004': { image: P+'molokhia.jpg',         imageStatus:'exact', imageNote:'File molokhia.jpg visually contains Hala Frozen Peas' },
+  'veg-005': { image: P+'green-peas.jpg',       imageStatus:'exact', imageNote:'File green-peas.jpg visually contains Hala Spinach Minced' },
+  'veg-006': { image: P+'spinach.jpg',          imageStatus:'exact', imageNote:'File spinach.jpg visually contains Hala Molokhia Minced' },
+  'veg-007': { image: P+'cauliflower.jpg',      imageStatus:'exact', imageNote:'File cauliflower.jpg visually contains Hala Artichoke Bottoms' },
+  'veg-008': { image: P+'broccoli.jpg',         imageStatus:'exact', imageNote:'File broccoli.jpg visually contains Hala Cauliflower' },
+  'veg-009': { image: P+'artichoke.jpg',        imageStatus:'exact', imageNote:'File artichoke.jpg visually contains Hala Broccoli' },
 
   // Roselle (catalogue p.7)
   'veg-010': { image: P+'strawberry.jpg',              imageStatus:'exact',    imageNote:'Catalogue p.7 — Roselle Strawberry' },
@@ -175,14 +172,14 @@ export const productImageMap = {
   'veg-028': { image: P+'french-fries.jpg',            imageStatus:'exact',    imageNote:"Catalogue p.9 — Magic Farms Fries 10×1kg" },
   'veg-029': { image: P+'french-fries-bulk.jpg',       imageStatus:'exact',    imageNote:"Catalogue p.9 — Magic Farms Fries 4×2.5kg" },
 
-  // O'Là (catalogue p.10)
-  'veg-030': { image: P+'artichoke-ola.jpg',           imageStatus:'exact',    imageNote:"Catalogue p.10 — O'Là Artichoke Bottoms" },
-  'veg-031': { image: P+'spinach-ola.jpg',             imageStatus:'exact',    imageNote:"Catalogue p.10 — O'Là Chopped Spinach" },
-  'veg-032': { image: P+'molokhia-ola.jpg',            imageStatus:'exact',    imageNote:"Catalogue p.10 — O'Là Minced Molokheya" },
-  'veg-033': { image: P+'okra-ola.jpg',                imageStatus:'exact',    imageNote:"Catalogue p.10 — O'Là Okra Zero" },
-  'veg-034': { image: P+'french-fries-ola.jpg',        imageStatus:'exact',    imageNote:"Catalogue p.10 — O'Là Fries 10×1kg" },
-  'veg-035': { image: null,                            imageStatus:'fallback', imageNote:"O'Là Fries 4×2.5kg — no distinct image from 10×1kg" },
-  'veg-036': { image: null,                            imageStatus:'fallback', imageNote:"O'Là Peas — no distinct catalogue image confirmed" },
+  // O'Là (catalogue p.10) — molokhia-ola.jpg and okra-ola.jpg were swapped; corrected by visual inspection
+  'veg-030': { image: P+'artichoke-ola.jpg',  imageStatus:'exact', imageNote:"Catalogue p.10 — O'Là Artichoke Bottoms" },
+  'veg-031': { image: P+'spinach-ola.jpg',    imageStatus:'exact', imageNote:"Catalogue p.10 — O'Là Chopped Spinach" },
+  'veg-032': { image: P+'okra-ola.jpg',       imageStatus:'exact', imageNote:"File okra-ola.jpg visually contains O'Là Minced Molokhia" },
+  'veg-033': { image: P+'molokhia-ola.jpg',   imageStatus:'exact', imageNote:"File molokhia-ola.jpg visually contains O'Là Okra Zero" },
+  'veg-034': { image: P+'french-fries-ola.jpg',imageStatus:'exact',imageNote:"Catalogue p.10 — O'Là Fries 10×1kg" },
+  'veg-035': { image: null,                    imageStatus:'fallback', imageNote:"O'Là Fries 4×2.5kg — no distinct image from 10×1kg" },
+  'veg-036': { image: P+'ola-green-peas.png', imageStatus:'exact', imageNote:"Uploaded — O'Là Frozen Peas" },
 
   // ══════════════════════════════════════════════════════════════════════
   // PREPARED & READY FOODS
@@ -194,21 +191,21 @@ export const productImageMap = {
   'pre-003': { image: null,                            imageStatus:'fallback', imageNote:'Thai Chicken variant of pre-002 — no distinct image' },
   'pre-004': { image: null,                            imageStatus:'fallback', imageNote:'Teriyaki Chicken variant of pre-002 — no distinct image' },
 
-  // Spring Rolls — positional crop, not confirmed → MISSING
-  'pre-005': { image: null,                            imageStatus:'missing',  imageNote:'Tastie Vegetable Spring Roll — image unconfirmed; needs visual check' },
-  'pre-006': { image: null,                            imageStatus:'missing',  imageNote:'Tastie Spring Roll Sweet & Sour — image unconfirmed; needs visual check' },
+  // Spring Rolls — confirmed (uploaded image)
+  'pre-005': { image: P+'tastie-spring-roll.png', imageStatus:'exact', imageNote:'Uploaded — Tastie Vegetable Spring Roll' },
+  'pre-006': { image: P+'tastie-spring-roll.png', imageStatus:'exact', imageNote:'Uploaded — Tastie Spring Roll Sweet & Sour (shares image)' },
 
   // Spring Home Pastry — confirmed (TYJ pastry image)
   'pre-007': { image: P+'p10_06.jpg',                  imageStatus:'exact',    imageNote:'Catalogue p.11 — Spring Home TYJ Pastry 6" confirmed' },
   'pre-008': { image: null,                            imageStatus:'fallback', imageNote:'Spring Home Pastry 8.5" — shares pre-007 image' },
   'pre-009': { image: null,                            imageStatus:'fallback', imageNote:'Spring Home Pastry 10" — shares pre-007 image' },
 
-  // Supreme Pierogies — confirmed by user
-  'pre-010': { image: P+'p10_03.jpg',                  imageStatus:'exact',    imageNote:'Catalogue p.11 upper-right — Pierogies confirmed by user' },
-  'pre-011': { image: null,                            imageStatus:'fallback', imageNote:'Pierogies Broccoli variant — shares pre-010 image' },
+  // Supreme Pierogies — confirmed (uploaded image)
+  'pre-010': { image: P+'pierogies-supreme.png', imageStatus:'exact', imageNote:'Uploaded — Supreme Pierogies Cheddar & Potato' },
+  'pre-011': { image: P+'pierogies-supreme.png', imageStatus:'exact', imageNote:'Uploaded — Supreme Pierogies Broccoli variant (shares image)' },
 
-  // Puff Pastry — positional crop, not confirmed → MISSING
-  'pre-012': { image: null,                            imageStatus:'missing',  imageNote:'Khansaama Puff Pastry — image unconfirmed; needs visual check' },
+  // Puff Pastry — confirmed (uploaded image)
+  'pre-012': { image: P+'puff-pastry-sheet.png', imageStatus:'exact', imageNote:'Uploaded — Khansaama Puff Pastry Sheets' },
 
   // Royal Meats + Minar Paratha — confirmed
   'pre-013': { image: P+'beef-burger.jpg',             imageStatus:'exact',    imageNote:'Catalogue p.12 — Royal Meats Beef Burger' },
